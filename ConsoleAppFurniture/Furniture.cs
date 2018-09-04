@@ -47,10 +47,7 @@
             }
         }
 
-        public void SetId(int id)
-        {
-            _Id = id;
-        }
+        public void SetId(int id) => _Id = id;        
 
         public Furniture(int id, int x, int y, string name, EnumFurniture furniture)
         {
