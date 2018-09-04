@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleAppFurniture
+﻿namespace ConsoleAppFurniture
 {
+    using System;
+    using System.Linq;
+
     class View : Room
     {
         private int _row { set; get; }
