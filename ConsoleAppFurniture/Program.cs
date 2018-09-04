@@ -38,9 +38,7 @@ namespace ConsoleAppFurniture
                         break;
                     case 6:
                         view.MoveItem();
-                        break;
-                    case 7:
-                        break;
+                        break;            
                     case 8:
                         bExit = false;
                         break;
