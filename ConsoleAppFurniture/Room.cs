@@ -23,7 +23,7 @@
         {
             if ((EnumFurniture)Enum.ToObject(typeof(EnumFurniture), Arr[furniture.XPos, furniture.YPos]) == EnumFurniture.Clear)
             {
-                furniture._Id = Lst.Count;
+                furniture.SetId(Lst.Count);
                 Lst.Add(furniture);
                 Arr[furniture.XPos, furniture.YPos] = (int)@enum;
                 return true;

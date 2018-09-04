@@ -16,7 +16,7 @@
     /// </summary>
     public abstract class Furniture
     {
-        public int _Id { get; set; }
+        protected int _Id { get; set; }
         protected string Name { get; set; }
         protected int _XPos { get; set; }
         protected int _YPos { get; set; }
@@ -24,6 +24,7 @@
         public bool Progress { get { return InProgress; } }
 
         public int XPos { get { return _XPos; } }
+        public int Id { get { return _Id; } }
         public int YPos { get { return _YPos; } }
         public string FurnitureName { get { return Name; } }
 
@@ -44,6 +45,11 @@
             {
                 InProgress = true;
             }
+        }
+
+        public void SetId(int id)
+        {
+            _Id = id;
         }
 
         public Furniture(int id, int x, int y, string name, EnumFurniture furniture)

@@ -71,7 +71,7 @@
 
             for (int i = 0; i < Lst.Count; i++)
             {
-                Console.WriteLine($"|\t{Lst[i]._Id}\t|\t{Lst[i].FurnitureName}\t|\t{Lst[i].XPos + 1}\t|\t{Lst[i].YPos + 1}\t|\t{GetTypeName(Lst[i].Type)}\t|\t{Lst[i].Progress}\t|");
+                Console.WriteLine($"|\t{Lst[i].Id}\t|\t{Lst[i].FurnitureName}\t|\t{Lst[i].XPos + 1}\t|\t{Lst[i].YPos + 1}\t|\t{GetTypeName(Lst[i].Type)}\t|\t{Lst[i].Progress}\t|");
             }
         }
 
@@ -120,7 +120,7 @@
 
                 if (res != -1)
                 {
-                    Lst.Where(x => x._Id == res).FirstOrDefault().ChangeState();
+                    Lst.Where(x => x.Id == res).FirstOrDefault().ChangeState();
                     Console.WriteLine("State changed! Press any key");
                     Console.ReadKey();                   
                 }
@@ -231,7 +231,7 @@
 
                 if (res != -1)
                 {
-                    if (RemoveItem(Lst.Where(x => x._Id == res).FirstOrDefault()))
+                    if (RemoveItem(Lst.Where(x => x.Id == res).FirstOrDefault()))
                     {
                         Console.WriteLine("Removing succesfull. Press any key");
                         Console.ReadKey();
