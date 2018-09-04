@@ -132,6 +132,4 @@ namespace ConsoleAppFurniture
             return base.Move(x, y);
         }
     }
-
-
 }

@@ -61,9 +61,7 @@ namespace ConsoleAppFurniture
         }                            
 
         public void ShowTable()
-        {
-            //marmeladhero@gmail.com
-            //ilya281996
+        {            
             Console.Clear();
             Console.Write("|\tId\t");
             Console.Write("|\tName\t");

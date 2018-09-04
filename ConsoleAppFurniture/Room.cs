@@ -48,7 +48,7 @@ namespace ConsoleAppFurniture
                 Console.WriteLine("Input Error! Press any key");
                 Console.ReadKey();
                 return -1;
-            }         
+            }
 
             if (result >= min && result <= max)
             {
@@ -79,10 +79,8 @@ namespace ConsoleAppFurniture
             return "Unknown type";
         }
 
-        protected virtual Furniture GetFurniture(int x, int y)
-        {
-            return Lst.Where(i => i.XPos == x && i.YPos == y).FirstOrDefault();
-        }
+        protected virtual Furniture GetFurniture(int x, int y) => Lst.Where(i => i.XPos == x && i.YPos == y).FirstOrDefault();
+        
 
         protected virtual bool MoveFurniture(Furniture furniture, int x, int y)
 
