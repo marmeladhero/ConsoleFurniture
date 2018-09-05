@@ -10,7 +10,7 @@ namespace ConsoleAppWallDefender
     {
         static void Main(string[] args)
         {
-            View view = new View(5, 5);
+            View view = new View(6, 6);
             view.Show();
             view.Run();          
         }

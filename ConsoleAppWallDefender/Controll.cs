@@ -13,17 +13,23 @@ namespace ConsoleAppWallDefender
         Wall = 2
     }
     
-    public class Controll
+    public struct Point
+    {
+        public int _x { set; get; }
+        public int _y { set; get; }    
+    }
+
+    public class MyField
     {
         protected int[,] Field = null;
         protected int _row = default(int);
         protected int _col = default(int);
+        Katapulta Katapulta = new Katapulta();
 
-        private Katapulta Katapulta = new Katapulta();
-        private List<string> lstCoordinates = new List<string>();
+        private List<Point> lstCoordinates = new List<Point>();
         private int iCount = default(int);
 
-        public Controll(int row, int col)
+        public MyField(int row, int col)
         {
             Field = new int[row, col];
             _row = row;
@@ -59,35 +65,24 @@ namespace ConsoleAppWallDefender
                 int iPos = Field[Katapulta._xPos, Katapulta._yPos];
 
                 switch ((EnumFieldView)iPos)
-                {
+                {                    
                     case EnumFieldView.Empty:
-                        lstCoordinates.Add($"{DateTime.Now} -- Y:{Katapulta._xPos + 1}; X:{Katapulta._yPos + 1}"); // оценка по осевым координатам X Y
+                        lstCoordinates.Add(new Point(){ _x = Katapulta._xPos, _y = Katapulta._yPos });
                         Field[Katapulta._xPos, Katapulta._yPos] = (int)EnumFieldView.Hit;
                         break;
                     case EnumFieldView.Hit:
                         break;
                     case EnumFieldView.Wall:
                         {
+                            lstCoordinates.Add(new Point() { _x = Katapulta._xPos, _y = Katapulta._yPos });
                             iCount--;
                             Field[Katapulta._xPos, Katapulta._yPos] = (int)EnumFieldView.Hit;
-                            throw new MyException(GetMessageFromList(lstCoordinates));
+                            throw new MyException(lstCoordinates);
                         }
                 }
 
             }
             return true;
-        }
-
-        private string GetMessageFromList(List<string> lst)
-        {
-            string strTemp = string.Empty;
-
-            foreach (var item in lst)
-            {
-                strTemp += item + Environment.NewLine;                
-            }
-
-            return strTemp;
         }
          
         protected string DrawStringFromEnum(EnumFieldView @enum)

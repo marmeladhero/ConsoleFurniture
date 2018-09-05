@@ -4,14 +4,16 @@ namespace ConsoleAppWallDefender
 {
     using System;
 
-    public class View : Controll
+    public class View : MyField
     {
 
         public View(int height, int width) : base(height, width)
-        {
+        {  }
 
-        }
 
+        /// <summary>
+        /// Отрисовать поле
+        /// </summary>
         public void Show()
         {
             Console.Clear();
@@ -27,6 +29,9 @@ namespace ConsoleAppWallDefender
             }
         }
 
+        /// <summary>
+        /// Запуск стрельбы
+        /// </summary>
         public void Run()
         {
             do
@@ -43,8 +48,8 @@ namespace ConsoleAppWallDefender
                 catch (MyException ex)
                 {
                     Show();
-                    Console.WriteLine("Atack finished! Press spacebar to try attack again! Press any key to exit");
-
+                    Console.WriteLine("Attack finished! Press spacebar to try attack again! Press any key to exit");
+                    
                     Logger.Write(ex.Message);
 
                     if (Console.ReadKey().Key != ConsoleKey.Spacebar)
