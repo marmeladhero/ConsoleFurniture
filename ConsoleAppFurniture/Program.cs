@@ -20,7 +20,7 @@
                         Console.ReadKey();
                         break;
                     case 2:
-                        view.SelectPosition(view.AddFurniture());
+                        view.SelectPosition(view.ResolveFurniture());
                         break;
                     case 3:
                         view.RemoveFurniture();

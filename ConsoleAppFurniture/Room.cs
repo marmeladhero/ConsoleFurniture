@@ -7,7 +7,7 @@
     /// <summary>
     /// Controll
     /// </summary>
-    class Room
+    public class Room
     {
         protected List<Furniture> Lst { get; set; }
 

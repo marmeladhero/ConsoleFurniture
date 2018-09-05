@@ -318,7 +318,7 @@
             } while (true);
         }
 
-        public int AddFurniture()
+        public int ResolveFurniture()
         {
             do
             {

@@ -10,6 +10,7 @@
         Table = 3,
         TV = 4
     }
+   
 
     /// <summary>
     /// Model
@@ -17,10 +18,11 @@
     public abstract class Furniture
     {
         protected int _Id { get; set; }
-        protected string Name { get; set; }
+        public string Name { get; protected set; }
         protected int _XPos { get; set; }
         protected int _YPos { get; set; }
         protected bool InProgress { get; set; }
+
         public bool Progress { get { return InProgress; } }
 
         public int XPos { get { return _XPos; } }
