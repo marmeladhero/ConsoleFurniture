@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleAppWallDefender
+﻿namespace ConsoleAppWallDefender
 {
-    class MyException : Exception
+    using System;
+    using System.Collections.Generic;
+
+    public class MyException : Exception
     {
         public override string Message { get; }
         

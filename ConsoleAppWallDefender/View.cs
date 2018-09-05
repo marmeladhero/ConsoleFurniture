@@ -1,6 +1,4 @@
-﻿
-
-namespace ConsoleAppWallDefender
+﻿namespace ConsoleAppWallDefender
 {
     using System;
 
